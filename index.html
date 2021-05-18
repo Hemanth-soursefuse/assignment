@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" 
+    rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" 
+    crossorigin="anonymous">
+    <title>Sourcefuse</title>
+    <style>
+        table{
+            border-collapse: collapse;
+            font-family: Arial, Helvetica, sans-serif;
+            width:100%;
+        }
+         table td {
+      border:1px solid #ddd;
+      }
+        table tr{background-color: #f2f2f2;}
+        table th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: center;
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        /* Popup container - can be anything you want */
+        .popup {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        }
+
+        /* The actual popup */
+        .popup .popuptext {
+        visibility: hidden;
+        width: 160px;
+        background-color: #555;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 8px 0;
+        position: absolute;
+        z-index: 1;
+        bottom: 125%;
+        left: 50%;
+        margin-left: -80px;
+        }
+
+        /* Popup arrow */
+        .popup .popuptext::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        
+        border-style: solid;
+        border-color: #555 transparent transparent transparent;
+        }
+
+        /* Toggle this class - hide and show the popup */
+        .popup .show {
+        visibility: visible;
+        -webkit-animation: fadeIn 1s;
+        animation: fadeIn 1s;
+        }
+
+        /* Add animation (fade in the popup) */
+        @-webkit-keyframes fadeIn {
+        from {opacity: 0;} 
+        to {opacity: 1;}
+        }
+
+        @keyframes fadeIn {
+        from {opacity: 0;}
+        to {opacity:1 ;}
+        }
+        #edit{
+            margin:10px auto;
+        }
+    </style>
+    
+</head>
+<body class="container-fluid">
+    <table>
+        <thead>
+            <tr>
+                <th id="fname">First Name</th> 
+                <th id="mname">Middle Name</th>
+                <th id="lname">Last Name</th>
+                <th id="mail">Email</th>
+                <th id="phone">Phone Number</th>
+                <th id="role">Role Number</th>
+                <th id="Addre">Address</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td id="id1" onclick="a()"></td>
+                <td id="id2" onclick="b()"></td>
+                <td id="id3" onclick="c()"></td>
+                <td id="id4" onclick="d()"></td>
+                <td id="id5" onclick="e()"></td>
+                <td id="id6" onclick="f()"></td>
+                <td id="id7" onclick="g()"></td>
+            </tr>
+            <tr>
+                <td id="id8"   onclick="a1()"></td>
+                <td id="id9"   onclick="b1()"></td>
+                <td id="id10"   onclick="c1()"></td>
+                <td id="id11"   onclick="d1()"></td>
+                <td id="id12"   onclick="e1()"></td>
+                <td id="id13"   onclick="f1()"></td>
+                <td id="id14"   onclick="g1()"></td>
+            </tr>
+        </tbody>
+    </table>
+    <center>
+    <div class="popup" onclick="edit()" id="edit">
+        <p id="center" class="btn btn-danger"> Edit</p>
+        <span class="popuptext" id="myPopup">Click on field to be change...</span>
+      </div>
+      </center>
+</body>
+<script>
+    data=[['hemanth','krish','murthy', 'mail','phone','role','addr'],
+    ['hemanth','krish','murthy', 'mail','phone','role','addr']];        
+    let x='id';
+    var j=1;
+    for(let i=0;i<data[0].length;i++,j++){
+        document.getElementById(x+j).innerHTML=data[0][i];
+    };
+    for(let i=0;i<data[0].length;i++,j++){
+        document.getElementById(x+j).innerHTML=data[1][i];
+    };
+    function a(){
+        var person = prompt("Please enter details to be change",data[0][0]);
+        if (person != null){
+            document.getElementById("id1").innerHTML = person;
+        };
+    };
+    function b(){
+        var person = prompt("Please enter details to be change",data[0][1]);
+        if (person != null){
+            document.getElementById("id2").innerHTML = person;
+        };
+    };
+    function c(){
+        var person = prompt("Please enter details to be change",data[0][2]);
+        if (person != null){
+            document.getElementById("id3").innerHTML = person;
+        };
+    };
+    function d(){
+        var person = prompt("Please enter details to be change",data[0][3]);
+        if (person != null){
+            document.getElementById("id4").innerHTML = person;
+        };
+    };
+    function e(){
+        var person = prompt("Please enter details to be change",data[0][4]);
+        if (person != null){
+            document.getElementById("id5").innerHTML = person;
+        };
+    };
+    function f(){
+        var person = prompt("Please enter details to be change",data[0][5]);
+        if (person != null){
+            document.getElementById("id6").innerHTML = person;
+        };
+    };
+    function g(){
+        var person = prompt("Please enter details to be change",data[0][6]);
+        if (person != null){
+            document.getElementById("id7").innerHTML = person;
+        };
+    };
+    
+    function a1(){
+        var person = prompt("Please enter details to be change",data[1][0]);
+        if (person != null){
+            document.getElementById("id8").innerHTML = person;
+        };
+    };
+    function b1(){
+        var person = prompt("Please enter details to be change",data[1][1]);
+        if (person != null){
+            document.getElementById("id9").innerHTML = person;
+        };
+    };
+    function c1(){
+        var person = prompt("Please enter details to be change",data[1][2]);
+        if (person != null){
+            document.getElementById("id10").innerHTML = person;
+        };
+    };
+    function d1(){
+        var person = prompt("Please enter details to be change",data[1][3]);
+        if (person != null){
+            document.getElementById("id11").innerHTML = person;
+        };
+    };
+    function e1(){
+        var person = prompt("Please enter details to be change",data[1][4]);
+        if (person != null){
+            document.getElementById("id12").innerHTML = person;
+        };
+    };
+    function f1(){
+        var person = prompt("Please enter details to be change",data[1][5]);
+        if (person != null){
+            document.getElementById("id13").innerHTML = person;
+        };
+    };
+    function g1(){
+        var person = prompt("Please enter details to be change",data[1][6]);
+        if (person != null){
+            document.getElementById("id14").innerHTML = person;
+        };
+    };
+    function edit() {
+    var popup = document.getElementById("myPopup");
+    popup.classList.toggle("show");
+    }    
+</script>
+</html>
